@@ -7,6 +7,9 @@
     <groupId>com.taotao</groupId>
     <artifactId>taotao-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>../taotao-common</module>
+    </modules>
     <packaging>pom</packaging>
 
     <!-- 集中定义依赖版本号-->
