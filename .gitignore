@@ -7,3 +7,10 @@
 *.iml
 out
 gen
+.classpath
+.project
+*.eml
+target
+*.log
+*.log.*
+*.settings
