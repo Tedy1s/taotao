@@ -12,15 +12,24 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
+    <!--扫描controller-->
     <context:component-scan base-package="com.taotao.controller"/>
+
     <mvc:annotation-driven/>
+
+    <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!--资源映射-->
+    <mvc:resources mapping="/js/**" location="WEB-INF/js/"/>
+    <mvc:resources mapping="/css/**" location="WEB-INF/css/"/>
+
     <!-- 引用dubbo服务-->
     <dubbo:application name="taotao-manager-web"/>
     <dubbo:registry protocol="zookeeper"
-                    address="192.168.25.154:2181"/>
+                    address="120.77.223.93:2181"/>
     <dubbo:reference interface="com.taotao.service.ItemService" id="itemService"/>
 </beans>
